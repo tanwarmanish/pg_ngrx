@@ -8,7 +8,7 @@ export function renderTodos(collection) {
     todoList.innerHTML += `
     	<li>
 	      ${item.label}
-        <button type="button" data-todo='${JSON.stringify(item)}'>
+        <button type="button" id='${JSON.stringify(item.id)}'>
           Delete
         </button>
       </li>
