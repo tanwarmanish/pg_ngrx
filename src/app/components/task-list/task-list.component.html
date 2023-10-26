@@ -1,5 +1,7 @@
-<div class="list" *ngIf="data?.tasks?.length">
-  <ng-container *ngFor="let task of data?.tasks;let tIndex=index">
-    <task [content]="task" [index]="tIndex"></task>
-  </ng-container>
-</div>
+<ng-container *ngIf="data?.taskList$|async as taskList">
+  <div class="list" *ngIf="taskList?.length">
+    <ng-container *ngFor="let task of taskList;let tIndex=index">
+      <task [content]="task" [index]="tIndex"></task>
+    </ng-container>
+  </div>
+</ng-container>
